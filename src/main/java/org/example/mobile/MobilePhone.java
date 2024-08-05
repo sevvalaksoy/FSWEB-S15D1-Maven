@@ -29,12 +29,14 @@ public class MobilePhone {
     }
     public boolean removeContact(Contact contact){
         if(myContacts.contains(contact)){
-            myContacts.remove(contact);
+            getMyContacts().remove(contact);
             return true;
-        } else return false;
+        } else {
+            return false;
+        }
     }
     public int findContact(Contact contact){
-        if(getMyContacts().contains(contact)){
+        if(myContacts.contains(contact)){
             return getMyContacts().indexOf(contact);
         } else return -1;
     }
@@ -47,7 +49,7 @@ public class MobilePhone {
         return -1;
     }
     public Contact queryContact(String name){
-        for(Contact contact:myContacts){
+        for(Contact contact: myContacts){
             if(contact.getName().equals(name)){
                 return contact;
             }

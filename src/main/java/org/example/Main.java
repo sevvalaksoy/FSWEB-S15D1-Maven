@@ -22,7 +22,17 @@ public class Main {
         mp.updateContact(no1,no3);
         mp.addNewContact(no1);
         mp.printContact();
-
+        MobilePhone mobilePhone;
+        List<Contact> contacts = new ArrayList<>();
+        contacts.add(new Contact("John Doe", "123123123"));
+        contacts.add(new Contact("Jane Doe", "124124124"));
+        contacts.add(new Contact("Baby Doe", "125125125"));
+        mobilePhone = new MobilePhone("11111111", contacts);
+        Contact contact = new Contact("Test", "12345678");
+        mobilePhone.addNewContact(new Contact("Test", "12345678"));
+        mobilePhone.removeContact(contact);
+        System.out.println(mobilePhone.findContact(contact));
+        System.out.println(mobilePhone.getMyContacts().size());
     }
 
 }

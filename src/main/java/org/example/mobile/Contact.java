@@ -25,4 +25,9 @@ public class Contact {
         Contact contact = new Contact(name, phoneNumber);
         return contact;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return ((Contact)o).name == name && ((Contact)o).phoneNumber == phoneNumber;
+    }
 }
